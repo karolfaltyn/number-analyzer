@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 //generate div box from each number
-const Box_numbers = ({ numbers }) => {
-  const box = numbers.map((number) => <div className='item-box'><p>{number}</p></div>)
+const BoxNumbers = ({ numbers }) => {
+  const box = numbers.map((number) => <div className='item-box' key={number}><p>{number}</p></div>)
+
+  // check if even, odd, prime JAK TO ZROBIĆ?
+
+  for (let i = 0; i < numbers.length; i++) {
+    const bgc = document.getElementsByClassName("#");
+    numbers[i] % 2 === 0 ? bgc.classList.add("isEven") : console.log("nieparzyste")
+  }
+
   return (
     <div className='flex-box'>
       {box}
@@ -12,30 +20,38 @@ const Box_numbers = ({ numbers }) => {
   )
 };
 
-
-const Header = (props) => (
+const Header = () => (
   <header>
     <h1>Number Generator</h1>
-    <p>Even are green, odds are yellow and prime are red.</p>
+    <p>Even are <span id='green'>green</span>, odds are <span id='yellow'>yellow</span> and prime are <span id='red'>red</span>.</p>
   </header>
 );
 
-const Input = () => <input></input>
+const Input = () => {
+  const maxNumber = document.querySelectorAll('input').value;
+  return (
+    <div className='user-data'>
+      <label>Numbers on screen: </label>
+      <input type="number" defaultValue={16}></input>
+    </div>
+  )
+}
+
+const maxNumber = 12
 
 const App = () => {
-  const max_numbers = window.screen.height;
-  const numbers = [...Array(max_numbers).keys()];
-
-  // const numbers = [1, 2, 3, 4, 5];
+  const numbers = [...Array(maxNumber).keys()];
+  //zapytać jak przenieść te wartości
 
   return (
     <div>
-      <Header numbers={numbers} />
+      <Header />
       <Input />
-      <Box_numbers numbers={numbers} />
+      <BoxNumbers numbers={numbers} />
     </div>
   );
 };
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
+//createRoot co to?
