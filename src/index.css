@@ -1,0 +1,24 @@
+header {
+  margin: 0 auto;
+}
+
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10vh 10vw 0 10vw;
+  /* width: 80vw; */
+  height: 10vh;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-box {
+  background-color: red;
+  width: 15vh;
+  height: 15vh;
+  font-size: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
