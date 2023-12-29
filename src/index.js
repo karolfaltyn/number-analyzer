@@ -2,16 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-//generate div box from each number
+//generate div box from each number and check if even, odd, prime
 const BoxNumbers = ({ numbers }) => {
-  const box = numbers.map((number) => <div className='item-box' key={number}><p>{number}</p></div>)
+  const isPrime = (num) => {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
 
-  // check if even, odd, prime JAK TO ZROBIĆ?
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
 
-  for (let i = 0; i < numbers.length; i++) {
-    const bgc = document.getElementsByClassName("#");
-    numbers[i] % 2 === 0 ? bgc.classList.add("isEven") : console.log("nieparzyste")
-  }
+    return true;
+  };
+
+  const box = numbers.map((number) => {
+    let className = 'item-box';
+
+    number % 2 === 0 ? className += ' even' : className += ' odd';
+
+    if (isPrime(number)) {
+      className += ' prime';
+    }
+
+    return <div className={className} key={number}><p>{number}</p></div>;
+  });
 
   return (
     <div className='flex-box'>

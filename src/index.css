@@ -38,18 +38,18 @@ input {
 }
 
 .item-box {
-  background-color: rgb(255, 0, 0);
+  /* background-color: rgb(255, 0, 0); */
   width: 15vh;
   height: 15vh;
   font-size: 5vh;
 }
 
-#isEven {
-  background-color: rgb(0, 162, 0);
+.even {
+  background-color: green;
 }
-#isOdd {
-  background-color: rgb(170, 170, 0);
+.odd {
+  background-color: yellow;
 }
-#isPrime {
+.prime {
   background-color: red;
 }
