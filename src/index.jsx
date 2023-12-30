@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
@@ -13,7 +13,7 @@ const Header = () => (
 );
 
 const BoxNumbers = ({ numbers }) => {
-  //check if even, odd or prime and add special class
+  // Function to check if a number is prime
   const isPrime = (num) => {
     if (num <= 1) return false;
     if (num <= 3) return true;
@@ -25,6 +25,7 @@ const BoxNumbers = ({ numbers }) => {
     return true;
   };
 
+  //Check if even, odd, prime and generate div with special class
   const box = numbers.map((number) => {
     let className = "item-box";
 
@@ -41,27 +42,60 @@ const BoxNumbers = ({ numbers }) => {
     );
   });
 
-  return (
-    <main>
-      <div className="user-data"></div>
-      <div className="flex-box">{box}</div>
-    </main>
-  );
+  return <div className="flex-box">{box}</div>;
 };
 
-const App = () => {
-  const maxNumber = window.innerWidth;
+//TODO: ADD FOOTER WITH GITHUB LINK
 
-  const numbers = [...Array(maxNumber).keys()];
+const App = () => {
+  // State to manage the user's input for the number of boxes
+  const [userInput, setUserInput] = useState("");
+
+  // State to manage the generated numbers
+  const [numbers, setNumbers] = useState([]);
+
+  // Function to handle user input change
+  const handleInputChange = (value) => {
+    setUserInput(value);
+  };
+
+  // Function to generate numbers based on user input
+  const generateNumbers = () => {
+    const parsedInput = parseInt(userInput);
+
+    //FIXME: SET MAX NUMBER
+    if (!isNaN(parsedInput) && parsedInput > 0) {
+      const numbersArray = Array.from(
+        { length: parsedInput },
+        (_, index) => index + 1
+      );
+      setNumbers(numbersArray);
+    } else {
+      alert("Please enter a valid positive number.");
+    }
+  };
 
   return (
     <div>
       <Header />
+      <main className="user-data">
+        <label>
+          Type positive number:
+          <input
+            type="number"
+            min={1}
+            value={userInput}
+            onChange={(evt) => handleInputChange(evt.target.value)}
+          />
+        </label>
+        <button onClick={generateNumbers}>&#62;</button>
+      </main>
       <BoxNumbers numbers={numbers} />
+      {/* <Footer /> */}
     </div>
   );
 };
 
+//FIXME: CHANGE RENDER METHOD TO createRoot (REACT 18)
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
-//createRoot co to?

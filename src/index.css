@@ -27,9 +27,14 @@ header {
   text-align: center;
 }
 
+/* TODO: ADD STYLE FOR INPUT, BUTTON AND FOOTER */
 input {
   width: 5vh;
 }
+
+/* button{
+
+} */
 
 .flex-box {
   flex-wrap: wrap;
