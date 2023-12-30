@@ -1,9 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
-//generate div box from each number and check if even, odd, prime
+const Header = () => (
+  <header>
+    <h1>Number Generator</h1>
+    <p>
+      Even are <span id="green">green</span>, odds are{" "}
+      <span id="yellow">yellow</span> and prime are <span id="red">red</span>.
+    </p>
+  </header>
+);
+
 const BoxNumbers = ({ numbers }) => {
+  //check if even, odd or prime and add special class
   const isPrime = (num) => {
     if (num <= 1) return false;
     if (num <= 3) return true;
@@ -16,59 +26,42 @@ const BoxNumbers = ({ numbers }) => {
   };
 
   const box = numbers.map((number) => {
-    let className = 'item-box';
+    let className = "item-box";
 
-    number % 2 === 0 ? className += ' even' : className += ' odd';
+    number % 2 === 0 ? (className += " even") : (className += " odd");
 
     if (isPrime(number)) {
-      className += ' prime';
+      className += " prime";
     }
 
-    return <div className={className} key={number}><p>{number}</p></div>;
+    return (
+      <div className={className} key={number}>
+        <p>{number}</p>
+      </div>
+    );
   });
 
   return (
-    <div className='flex-box'>
-      {box}
-    </div>
-  )
+    <main>
+      <div className="user-data"></div>
+      <div className="flex-box">{box}</div>
+    </main>
+  );
 };
 
-const Header = () => (
-  <header>
-    <h1>Number Generator</h1>
-    <p>Even are <span id='green'>green</span>, odds are <span id='yellow'>yellow</span> and prime are <span id='red'>red</span>.</p>
-  </header>
-);
-
-const Input = () => {
-  const maxNumber = document.querySelectorAll('input').value;
-  return (
-    <div className='user-data'>
-      <label>Numbers on screen: </label>
-      <input type="number" defaultValue={16}></input>
-    </div>
-  )
-}
-
-
-//TODO: ADD FOOTER 
-
-const maxNumber = 12
-
 const App = () => {
+  const maxNumber = window.innerWidth;
+
   const numbers = [...Array(maxNumber).keys()];
-  //zapytać jak przenieść te wartości
 
   return (
     <div>
       <Header />
-      <Input />
       <BoxNumbers numbers={numbers} />
     </div>
   );
 };
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 //createRoot co to?
