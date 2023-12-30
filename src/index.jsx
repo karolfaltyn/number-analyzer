@@ -51,6 +51,9 @@ const Input = () => {
   )
 }
 
+
+//TODO: ADD FOOTER 
+
 const maxNumber = 12
 
 const App = () => {
