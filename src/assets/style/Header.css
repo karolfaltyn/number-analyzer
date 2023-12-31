@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: clamp(0.5rem, 5vh, 2rem);
+  text-align: center;
+}
+
+#green {
+  color: rgb(0, 162, 0);
+}
+#yellow {
+  color: rgb(170, 170, 0);
+}
+#red {
+  color: red;
+}

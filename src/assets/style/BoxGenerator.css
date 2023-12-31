@@ -1,40 +1,9 @@
-header,
-.user-data,
 .flex-box,
 .item-box {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-header {
-  flex-direction: column;
-}
-
-#green {
-  color: rgb(0, 162, 0);
-}
-#yellow {
-  color: rgb(170, 170, 0);
-}
-#red {
-  color: red;
-}
-
-.user-data,
-header {
-  font-size: clamp(0.5rem, 5vh, 2rem);
-  text-align: center;
-}
-
-/* TODO: ADD STYLE FOR INPUT, BUTTON AND FOOTER */
-input {
-  width: 5vh;
-}
-
-/* button{
-
-} */
 
 .flex-box {
   flex-wrap: wrap;
@@ -43,7 +12,6 @@ input {
 }
 
 .item-box {
-  /* background-color: rgb(255, 0, 0); */
   width: 15vh;
   height: 15vh;
   font-size: 5vh;
