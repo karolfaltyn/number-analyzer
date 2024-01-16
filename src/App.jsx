@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Header } from "./parts/Header/Header";
+import { Header } from "./parts/Header";
 import { BoxGenerator } from "./components/BoxGenerator/BoxGenerator";
 // import { Footer } from "./parts/Footer/Footer";
 
