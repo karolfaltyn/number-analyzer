@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-numbers/static/css/main.c79bda92.css",
+    "main.js": "/react-numbers/static/js/main.e8ee9284.js",
+    "index.html": "/react-numbers/index.html",
+    "main.c79bda92.css.map": "/react-numbers/static/css/main.c79bda92.css.map",
+    "main.e8ee9284.js.map": "/react-numbers/static/js/main.e8ee9284.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c79bda92.css",
+    "static/js/main.e8ee9284.js"
+  ]
+}
