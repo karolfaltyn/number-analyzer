@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Header } from "./parts/Header";
 import { BoxGenerator } from "./components/BoxGenerator/BoxGenerator";
-// import { Footer } from "./parts/Footer/Footer";
 
 export const App = () => {
   // State to manage the user's input for the number of boxes
@@ -18,8 +17,9 @@ export const App = () => {
   // Function to generate numbers based on user input
   const generateNumbers = () => {
     const parsedInput = parseInt(userInput);
-
-    //FIXME: SET MAX NUMBER
+    if (parsedInput > 9999) {
+      alert("Number is to large! Max 4 digits")
+    }
     if (!isNaN(parsedInput) && parsedInput > 0) {
       const numbersArray = Array.from(
         { length: parsedInput },
@@ -37,19 +37,22 @@ export const App = () => {
       <main>
         <div className="user-data">
           <label>
-            Type positive number:
+            Type positive number: <br />
             <input
               type="number"
               min={1}
+              max={9999}
+              placeholder=""
               value={userInput}
               onChange={(evt) => handleInputChange(evt.target.value)}
             />
+            <button onClick={generateNumbers} className="btn">
+              &#62;
+            </button>
           </label>
-          <button onClick={generateNumbers}>&#62;</button>
         </div>
         <BoxGenerator numbers={numbers} />
-      </main>
-      {/* <Footer /> */}
+      </main >
     </>
   );
 };

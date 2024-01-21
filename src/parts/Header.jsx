@@ -1,4 +1,3 @@
-import "../assets/style/index.css";
 import "../assets/style/Header.css";
 
 export const Header = () => (
