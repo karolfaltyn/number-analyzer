@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Header } from "./parts/Header";
-import { BoxGenerator } from "./components/BoxGenerator/BoxGenerator";
+import { BoxGenerator } from "./components/BoxGenerator";
 
 export const App = () => {
   // State to manage the user's input for the number of boxes

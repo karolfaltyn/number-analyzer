@@ -1,5 +1,5 @@
-import { isPrime } from "../../utils/isPrime";
-import "../../assets/style/BoxGenerator.css";
+import { isPrime } from "../utils/isPrime";
+import "../assets/style/BoxGenerator.css";
 
 export const BoxGenerator = ({ numbers }) => {
   //Check if even, odd, prime and generate div with special class
