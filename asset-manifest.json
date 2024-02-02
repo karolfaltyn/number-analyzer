@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-numbers/static/css/main.cd708c8a.css",
-    "main.js": "/react-numbers/static/js/main.85cba108.js",
-    "index.html": "/react-numbers/index.html",
-    "main.cd708c8a.css.map": "/react-numbers/static/css/main.cd708c8a.css.map",
-    "main.85cba108.js.map": "/react-numbers/static/js/main.85cba108.js.map"
+    "main.css": "/number-analyzer/static/css/main.cd708c8a.css",
+    "main.js": "/number-analyzer/static/js/main.85cba108.js",
+    "index.html": "/number-analyzer/index.html",
+    "main.cd708c8a.css.map": "/number-analyzer/static/css/main.cd708c8a.css.map",
+    "main.85cba108.js.map": "/number-analyzer/static/js/main.85cba108.js.map"
   },
   "entrypoints": [
     "static/css/main.cd708c8a.css",
