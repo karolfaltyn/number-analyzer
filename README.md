@@ -13,7 +13,7 @@ Welcome to the Number Analyzer project! This simple React application generates 
 
 ## Getting Started
 
-To view the application online visit [https://karolfaltyn.github.io/number-analyzer](https://karolfaltyn.github.io/number-analyzer/).
+To view the application online, visit [https://karolfaltyn.github.io/number-analyzer](https://karolfaltyn.github.io/number-analyzer/).
 
 To run the project locally, follow these steps:
 
